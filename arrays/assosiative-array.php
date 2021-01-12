@@ -12,17 +12,17 @@
 <body>
     <div class="container">
         <?php
-            $student = [
+            $student = array(
                 'sname'=>'Satyam',
                 'marks'=>[98,99,96,74,86],
                 'fee'=>10000
-            ];
+            );
             $student['fee']=12000;
             echo "<h1>",$student['sname'],"</h1>";
             echo "<h1>",$student['fee'],"</h1>";
 
-            foreach($student as $value=>$key){
-                echo "<p>",var_dump($key)." : ".var_dump($value),"</p>";
+            foreach($student as $key=>$value){
+                echo "<p>{$key} : {$value}</p>";
             }
 
     ?>
