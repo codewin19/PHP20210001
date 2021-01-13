@@ -44,6 +44,7 @@
 <body>
     <?php
     $username_error = "";
+    $mobile_error ="";
     if(isset($_POST['register']))
     {
         
@@ -51,6 +52,12 @@
         {
             $username_error = "Please Fill Username!";
         }
+
+        if(!preg_match('/^\d{10}$/',$_POST['mobile']))
+        {
+            $mobile_error = "Please Enter Valid Mobile Number!";
+        }
+        echo $_POST['address'];
     }
 
 ?>
@@ -62,7 +69,9 @@
                     <span class="error"><?=$username_error ?></span>
                     <label for="email">Email</label>
                     <input type="email" name="email">
-
+                    <label for="mobile">mobile</label>
+                    <input type="text" name="mobile">
+                    <small class="error"><?=$mobile_error ?></small>
                     <label for="password">Password</label>
                     <input type="password" name="pass">
 
