@@ -53,11 +53,16 @@
             $username_error = "Please Fill Username!";
         }
 
+        if(!preg_match('/^[A-Z]{1,}[a-z]{4,}_[0-9]{1,}$/',$_POST['username']))
+        {
+            $username_error = "Please Fill Username as per following Testuser_45!";
+        }
+
         if(!preg_match('/^\d{10}$/',$_POST['mobile']))
         {
             $mobile_error = "Please Enter Valid Mobile Number!";
         }
-        echo $_POST['address'];
+        echo htmlspecialchars($_POST['address'],ENT_QUOTES);
     }
 
 ?>
